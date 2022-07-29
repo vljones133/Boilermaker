@@ -13,7 +13,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-react', 'react', 'es2015'],
+          presets: ['@babel/preset-react'],
         },
       },
       // use the style-loader/css-loader combos for anything matching the .css extension
