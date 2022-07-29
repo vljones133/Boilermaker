@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const user = require('../db/user');
+const user = require('../db/User');
 
 // matches GET requests to /api/users/
 router.get('/', async (req, res, next) => {
