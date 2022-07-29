@@ -56,4 +56,4 @@ const mapDispatch = (dispatch) => {
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
-export default useNavigate(connect(mapState, mapDispatch)(Root));
+export default connect(mapState, mapDispatch)(Root);

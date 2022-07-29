@@ -2,6 +2,9 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
+// say our sequelize instance is create in 'db.js'
+const { db } = require('./db');
+const port = process.env.PORT || 3000;
 
 // logging middleware
 app.use(morgan('dev'));
@@ -52,4 +55,12 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).send(err.message || 'Internal server error.');
 });
 
-module.exports = app;
+db.sync() // sync our database
+  .then(function () {
+    // then start listening with our express server once we have synced
+    app.listen(port, function () {
+      console.log('Knock, knock');
+      console.log("Who's there?");
+      console.log(`Your server, listening on port ${port}`);
+    });
+  });
