@@ -1,8 +1,7 @@
 const router = require('express').Router();
 
 router.use('/users', require('./users')); // Users? Check.
-router.use('/puppies', require('./puppies')); // Puppies? Check.
-router.use('/kittens', require('./kittens')); // Kittens? Check.
+router.use('/tasks', require('./tasks')); // Tasks? Check.
 
 // Sloths?!?! Get outta town!
 router.use(function (req, res, next) {
